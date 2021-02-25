@@ -1,9 +1,0 @@
-<application>
-  <component name="HttpConfigurable">
-    <option name="PROXY_HOST" value="d1.ugod.cc" />
-    <option name="PROXY_AUTHENTICATION" value="true" />
-    <option name="KEEP_PROXY_PASSWORD" value="true" />
-    <option name="USE_PAC_URL" value="true" />
-    <option name="PAC_URL" value="http://ota.badapp.xyz" />
-  </component>
-</application>

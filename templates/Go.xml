@@ -1,0 +1,25 @@
+<templateSet group="Go">
+  <template name="apihandler" value="&#10;type Request$NAME$ struct {&#10;&#10;}&#10;&#10;type Response$NAME$ struct {&#10;&#10;}&#10; &#10;func Handler$NAME$(w http.ResponseWriter, req *http.Request) {&#10;&#9;err := $NAME$(w, req)&#10;&#9;if err != nil {&#10;&#9;&#9;HandlerError(w, err)&#10;&#9;&#9;http.Error(w, err.Error(), http.StatusInternalServerError)&#10;&#9;}&#10;}&#10;&#10;&#10;func $NAME$(w http.ResponseWriter, r *http.Request) error {&#10;&#9;decoder := json.NewDecoder(r.Body)&#10;&#9;var req Request$NAME$&#10;&#9;err := decoder.Decode(&amp;req)&#10;&#9;if err != nil {&#10;&#9;&#9;return errors.Wrap(err, &quot;&quot;)&#10;&#9;}&#10;&#10;    var resp = Response$NAME${}&#10;&#9;data, err := json.Marshal(resp)&#10;&#9;if err != nil {&#10;&#9;&#9;return errors.Wrap(err, &quot;&quot;)&#10;&#9;} &#10;&#9;&#10;&#9;_, _ = w.Write(data)&#10;&#10;&#9;return nil&#10;}" description="创建一个请求Handler方法" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
+  <template name="idhandler" value="&#10;type Request$NAME$ struct {&#10;&#10;}&#10;&#10;type Response$NAME$ struct {&#10;&#10;}&#10; &#10;func Handler$NAME$(w http.ResponseWriter, req *http.Request) {&#10;&#9;err := $NAME$(w, req)&#10;&#9;if err != nil {&#10;&#9;&#9;HandlerError(err)&#10;&#9;&#9;http.Error(w, err.Error(), http.StatusInternalServerError)&#10;&#9;}&#10;}&#10;&#10;&#10;func $NAME$(w http.ResponseWriter, r *http.Request) error {&#10;&#9;fmt.Println(&quot;Handler Begin: &quot; + GetFunctionName())&#10;&#9;  &#10;&#9;userBaseData, pass, err := PreprocessRequest(w, r)&#10;&#9;if err != nil {&#10;&#9;&#9;return err&#10;&#9;}&#10;&#9;&#10;&#9;decoder := json.NewDecoder(r.Body)&#10;&#9;var req Request$NAME$&#10;&#9;err = decoder.Decode(&amp;req)&#10;&#9;if err != nil {&#10;&#9;&#9;return errors.Wrap(err, &quot;&quot;)&#10;&#9;}&#10;&#10;    var resp = Response$NAME${}&#10;&#9;data, err := json.Marshal(resp)&#10;&#9;if err != nil {&#10;&#9;&#9;return errors.Wrap(err, &quot;&quot;)&#10;&#9;}&#10;    &#10;&#9;err = PostprocessRequest(userBaseData.UserID, pass, w)&#10;&#9;if err != nil {&#10;&#9;&#9;return err&#10;&#9;}&#10;&#10;&#9;_, _ = w.Write(data)&#10;&#10;&#9;fmt.Println(&quot;Handler End: &quot; + GetFunctionName())&#10;&#9;return nil&#10;}" description="创建一个请求Handler方法" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
+  <template name="eee" value="if err != nil {&#10;    return err&#10;}" description="easy error handler" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="GO" value="true" />
+    </context>
+  </template>
+  <template name="errwrap" value="if $ERR$ != nil {&#10;    return errors.Wrap($ERR$, &quot;&quot;)&#10;}" description="If error" toReformat="true" toShortenFQNames="true">
+    <variable name="ERR" expression="errorVariable()" defaultValue="&quot;err&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="GO_STATEMENT" value="true" />
+    </context>
+  </template>
+</templateSet>

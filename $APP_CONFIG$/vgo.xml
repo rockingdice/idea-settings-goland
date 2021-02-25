@@ -1,0 +1,12 @@
+<application>
+  <component name="vgo">
+    <proxies>
+      <list>
+        <option value="https://mirrors.aliyun.com/goproxy/" />
+        <option value="https://goproxy.io/" />
+        <option value="off" />
+        <option value="direct" />
+      </list>
+    </proxies>
+  </component>
+</application>

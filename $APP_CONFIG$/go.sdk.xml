@@ -1,0 +1,12 @@
+<application>
+  <component name="GoSdkList">
+    <sdk-url>
+      <set>
+        <option value="" />
+        <option value="file://$USER_HOME$/github/go/go1.11.2" />
+        <option value="file:///usr/local/go" />
+        <option value="file:///usr/local/go1.12.7.darwin-amd64" />
+      </set>
+    </sdk-url>
+  </component>
+</application>

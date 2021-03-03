@@ -1,10 +1,10 @@
 <application>
   <component name="SshConfigs">
     <configs>
-      <sshConfig host="62.234.5.125" id="2804b9ed-0e20-4617-b0b6-cee79114eb96" keyPath="$USER_HOME$/cert/tencentCloud" port="44949" customName="62.234.5.125" nameFormat="CUSTOM" username="root">
+      <sshConfig host="62.234.5.125" id="1f4a2c50-fd9a-414a-a3a3-5ceb47d8da06" keyPath="$USER_HOME$/.ssh/tencentCloud" port="44949" nameFormat="DESCRIPTIVE" username="root" />
+      <sshConfig host="62.234.5.125" id="67eb90ec-995f-4d75-8a46-6695216ea0fe" keyPath="$USER_HOME$/cert/tencentCloud" port="44949" customName="62.234.5.125" nameFormat="CUSTOM">
         <option name="customName" value="62.234.5.125" />
       </sshConfig>
-      <sshConfig host="192.168.1.194" id="303896d3-63a0-4bea-8d6e-0f2021b440e5" keyPath="$USER_HOME$/.ssh/tencentCloud" port="22" nameFormat="DESCRIPTIVE" username="root" />
     </configs>
   </component>
 </application>

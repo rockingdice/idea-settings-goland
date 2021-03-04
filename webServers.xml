@@ -2,11 +2,10 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="55c2f8a3-7100-4013-8695-2c2d9ed46fec" name="62.234.5.125" url="http://62.234.5.125">
-        <fileTransfer host="62.234.5.125" port="44949" privateKey="$USER_HOME$/cert/tencentCloud" rootFolder="/root" accessType="SFTP" keyPair="true">
+        <fileTransfer rootFolder="/root" accessType="SFTP" sshConfigId="2804b9ed-0e20-4617-b0b6-cee79114eb96" sshConfig="62.234.5.125">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
-          <option name="port" value="44949" />
         </fileTransfer>
       </webServer>
     </option>
